@@ -3,11 +3,18 @@
 # Add more vexatious strings found in PDF eBook here:
 declare -a aRemoveText=(
 "http://free-pdf-books.com"
+"http://freepdf-books.com"
+"www.freepdf-books.com"
 "Free ebooks ==>"
 "www.it-ebooks.info"
 "www.allitebooks.com"
 "www.allitebooks.org"
 "www.ebook777.com"
+"http://itbookshub.com"
+"www.itbookshub.com"
+"IT-EBOOKS.DIRECTORY"
+"http://www.it-ebooks.directory/"
+"http:///"
 )
 
 
@@ -25,7 +32,7 @@ Function:
   Use this utility to remove any given string of text from a PDF file without having to edit the file with a PDF editor.
   If you don't specify a removal string, then a list commonly-encountered strings found in downloaded PDF books will be used instead.
 
-Example: 
+Example:
 	pdfrmtxt ebook.pdf \"http://free-pdf-books.com\" \"Free ebooks ==>\"
 
 Author:
@@ -113,7 +120,7 @@ info "Removing text from $PDFFILE"
 for i in $( seq 0 $((${#aRemoveText[@]}-1)) ); do
   # escape single and double quote marks
   vextext=$(echo ${aRemoveText[$i]} | sed -e "s|'|\x27|g" | sed -e 's/"/\x22/g')
-  sed -e "s|${vextext}||g" -i $TMPFILE1
+  sed -e "s|${vextext}||gi" -i $TMPFILE1
 done
 
 info "Re-Compressing $PDFFILE"

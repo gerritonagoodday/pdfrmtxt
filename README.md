@@ -1,11 +1,11 @@
 # pdfrmtxt
 
-Use this utility to remove any given string of text from a PDF file without having to edit the file with a bespoke PDF editor. 
+Use this utility to remove any given string of text from a PDF file without having to edit the file with a bespoke PDF editor.
 
 One particular use of this utility is to remove URLs of the websites that providers insert into their downloadable PDF files.
 These annotations and watermarks are at best annoying, at worst they obliterate actual contents.
 
-![No like](images/removethissortofthing.png)
+![No like](.images/removethissortofthing.png)
 
 # Prerequisites:
 
@@ -19,11 +19,11 @@ You need to have the PDF Toolkit installed, a.k.a. "pdftk". Depending on your Li
 # Usage:
 
     pdfrmtxt PDF-file
-  
+
 or
 
     pdfrmtxt PDF-file "annoying text"
-  
+
 # Example:
 
 To remove the vexatious "http://free-pdf-books.com" URL that appears all over your downloaded PDF book, do this:
@@ -41,10 +41,17 @@ To apply this on all PDF files in a directory tree, do this to un-taint your col
 
     find . -name "*.pdf" -exec pdfrmtxt {} \; -print
 
+
+# Installation:
+
+Copy these files into your /usr/local/bin directory
+
+    $ sudo cp pdfrmtxt* /usr/local/bin
+
 # Health Warning:
 
 - In rare cases, the text to be removed is encapsulated inside a font in the PDF file, so can't readily be identified in order for it to be removed using this process.
-- Take care not to specify a PDF control terms to be removed, as this can potentially corrupt your entire PDF file. 
+- Take care not to specify a PDF control terms to be removed, as this can potentially corrupt your entire PDF file.
 
 # Author:
 
