@@ -2,6 +2,8 @@
 
 # Add more vexatious strings found in PDF eBook here:
 declare -a aRemoveText=(
+"WOW! eBook"
+"www.wowebook.org"
 "http://free-pdf-books.com"
 "http://freepdf-books.com"
 "www.freepdf-books.com"
@@ -15,6 +17,8 @@ declare -a aRemoveText=(
 "IT-EBOOKS.DIRECTORY"
 "http://www.it-ebooks.directory/"
 "http:///"
+"eBook"
+"WOW!"
 )
 
 
